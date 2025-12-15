@@ -25,13 +25,6 @@
             "destination": "remote",
             "path": "/sap/opu/odata/sap/Z301636_ODATAEXAMPLE_SRV"
         },
-        "Northwind": {
-      "kind": "odata-v2",
-      "model": "srv/external/Northwind",
-      "credentials": {
-        "destination": "Northwind",
-        "path": "/"
-      },
         "csrf": true,
         "csrfInBatch": true
       }
