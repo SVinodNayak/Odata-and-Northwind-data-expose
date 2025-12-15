@@ -10,24 +10,42 @@
     "@sap-cloud-sdk/resilience": "^4"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2"
+    "@cap-js/sqlite": "^2",
+    "cds-plugin-ui5": "^0.13.0"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-approuting": "cds watch --open approuting/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-routing": "cds watch --open routing/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "cds": {
     "requires": {
-      "Z301636_ODATAEXAMPLE_SRV": {
-        "kind": "odata-v2",
-        "model": "srv/external/Z301636_ODATAEXAMPLE_SRV",
-          "credentials": {
-            "destination": "remote",
-            "path": "/sap/opu/odata/sap/Z301636_ODATAEXAMPLE_SRV"
-        },
-        "csrf": true,
-        "csrfInBatch": true
+      "auth": {
+        "kind": "basic",
+        "users": {
+          "sabavatvinod00@gmail.com": {
+            "password": "Vinod",
+            "roles": [
+              "Admin"
+            ]
+          },
+          "pranav@gmail.com": {
+            "password": "P@123",
+            "roles": [
+              "Viwer"
+            ]
+          }
+        }
       }
     }
-  }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/approuting",
+    "app/routing"
+  ],
+  "auth": "xsuaa"
 }

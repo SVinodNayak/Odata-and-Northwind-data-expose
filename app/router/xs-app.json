@@ -1,0 +1,32 @@
+{
+ "authenticationMethod": "route", 
+ "sessionTimeout": 10,
+ "routes": [
+  {
+   "source": "^/routing/webapp/(.*)$",
+   "target": "$1",
+   "localDir": "routing/webapp/",
+   "authenticationType": "xsuaa",
+   "csrfProtection": false
+  },
+  {
+   "source": "^/routing/webapp/(.*)$",
+   "target": "$1",
+   "localDir": "routing/webapp/",
+   "authenticationType": "xsuaa",
+   "csrfProtection": false
+  },
+  {
+   "source": "^/(.*)$",
+   "target": "$1",
+   "destination": "srv-api",
+   "authenticationType": "xsuaa",
+   "csrfProtection": false
+  }
+
+ ],
+ "logout": {
+  "logoutEndpoint": "/my/logout",
+  "logoutPage": "https://www.google.com"
+ }
+}
