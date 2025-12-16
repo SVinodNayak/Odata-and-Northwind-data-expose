@@ -1,5 +1,5 @@
 {
- "authenticationMethod": "route", 
+ "authenticationMethod": "route",
  "sessionTimeout": 10,
  "routes": [
   {
@@ -23,7 +23,6 @@
    "authenticationType": "xsuaa",
    "csrfProtection": false
   }
-
  ],
  "logout": {
   "logoutEndpoint": "/my/logout",

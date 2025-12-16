@@ -11,4 +11,7 @@ service Service @(requires: 'authenticated-user') {
     entity POITEMS as projection on db.POITEMS;
     entity KNA1 as projection on db.KNA1;
 
+     action approvePO(POID : String) returns String;
+
+  function getTotalAmount(POID : String) returns Decimal(15,2);
 }

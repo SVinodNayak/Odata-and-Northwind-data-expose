@@ -1,0 +1,67 @@
+@baseUrl = http://localhost:5213
+@user = sabavatvinod00@gmail.com
+@password = Vinod
+
+###
+GET http://localhost:5213/odata/v4/Customers
+Authorization: Basic {{user}} {{password}}
+
+###
+POST {{baseUrl}}/odata/v4/POHEADER
+Content-Type: application/json
+Authorization: Basic {{user}} {{password}}
+
+{
+  "POID": "PO1001",
+  "PONumber": "4500001001",
+  "Vendor": "SAP India",
+  "OrderDate": "2025-12-16",
+  "Status": "Pending"
+}
+
+###
+POST {{baseUrl}}/odata/v4/POITEMS
+Content-Type: application/json
+Authorization: Basic {{user}} {{password}}
+
+{
+  "POItemID": "ITEM001",
+  "POID": "PO1001",
+  "Material": "Laptop",
+  "Quantity": 2,
+  "Price": 75000,
+  "Plant": "HYD"
+}
+
+
+###
+GET {{baseUrl}}/odata/v4/POHEADER
+Authorization: Basic {{user}} {{password}}
+
+###
+GET {{baseUrl}}/odata/v4/POITEMS
+Authorization: Basic {{user}} {{password}}
+
+
+###
+PATCH {{baseUrl}}/odata/v4/POITEMS(POItemID='ITEM001')
+Content-Type: application/json
+Authorization: Basic {{user}} {{password}}
+
+{
+  "Quantity": 3
+}
+
+###
+POST {{baseUrl}}/odata/v4/approvePO(POID='PO1001')
+Content-Type: application/json
+Authorization: Basic {{user}} {{password}}
+
+###
+GET {{baseUrl}}/odata/v4/getTotalAmount
+Content-Type: application/json
+Authorization: Basic {{user}} {{password}}
+
+{
+  "POID": "PO1001"
+}

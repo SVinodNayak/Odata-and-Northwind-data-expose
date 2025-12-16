@@ -7,7 +7,8 @@
     "@sap/cds": "^9",
     "express": "^4",
     "@sap-cloud-sdk/connectivity": "^4",
-    "@sap-cloud-sdk/resilience": "^4"
+    "@sap-cloud-sdk/resilience": "^4",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2",
@@ -27,15 +28,20 @@
           "sabavatvinod00@gmail.com": {
             "password": "Vinod",
             "roles": [
-              "Admin"
+              "AdminRole"
             ]
           },
           "pranav@gmail.com": {
             "password": "P@123",
             "roles": [
-              "Viwer"
+              "ManagerRole"
             ]
           }
+        }
+      },
+      "[production]": {
+        "auth": {
+          "kind": "xsuaa"
         }
       }
     }
